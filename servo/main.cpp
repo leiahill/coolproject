@@ -5,6 +5,10 @@ Servo servo1;
 
 int pos = 0;
 
+void init() {
+    DDRB = (1 << 1);
+}
+
 void setup() {    
     servo1.attach(9);
 }
@@ -19,6 +23,7 @@ void loop() {
 }
 
 int main(void) {
+    init();
     setup();
     for(;;) {
 	loop();
